@@ -2,7 +2,7 @@
 export default function CoteBar(){
 
     return(
-        <svg className="absolute right-0" width="82" height="831" viewBox="0 0 82 831" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute right-0 top-0" width="82" height="831" viewBox="0 0 82 831" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="81" height="13" fill="#2A2EC5"/>
 <rect y="33" width="81" height="7" fill="#2A2EC5"/>
 <rect y="18" width="81" height="10" fill="#2A2EC5"/>
