@@ -3,7 +3,7 @@
 export default function Logosvg(){
 
     return(
-        <svg className="absolute top-8 left-8 " width="70" height="66" viewBox="0 0 70 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute top-8 left-0 " width="70" height="66" viewBox="0 0 70 66" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="70" y="66" width="18" height="18" transform="rotate(-180 70 66)" fill="#2A2EC5"/>
 <circle cx="36" cy="57" r="9" transform="rotate(-180 36 57)" fill="#2A2EC5"/>
 <path d="M10.0004 66L-2.51293e-05 48L20 48L10.0004 66Z" fill="#2A2EC5"/>
