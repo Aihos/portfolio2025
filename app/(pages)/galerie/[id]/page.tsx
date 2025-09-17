@@ -81,8 +81,7 @@ export default function PageId(){
                         </div>
                     </div>
                 </div>
-            </div>l'img
-            
+            </div>
         </div>
     )
 }
