@@ -1,8 +1,10 @@
+import Link from "next/link";
 
 
 export default function Logosvg(){
 
     return(
+        <Link href={"/"}>
         <svg className="fixed top-8 left-8 z-50" width="70" height="66" viewBox="0 0 70 66" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="70" y="66" width="18" height="18" transform="rotate(-180 70 66)" fill="#2A2EC5"/>
 <circle cx="36" cy="57" r="9" transform="rotate(-180 36 57)" fill="#2A2EC5"/>
@@ -14,5 +16,7 @@ export default function Logosvg(){
 <circle cx="36" cy="9" r="9" transform="rotate(-180 36 9)" fill="#2A2EC5"/>
 <path d="M10.0004 18L-2.51293e-05 -1.74846e-06L20 0L10.0004 18Z" fill="#2A2EC5"/>
 </svg>
+</Link>
+        
     )
 }

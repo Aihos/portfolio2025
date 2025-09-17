@@ -7,7 +7,7 @@ import CarrouselProject from "./carrouselProject";
 export default function ProjectHome(){
 
     return(
-          <div className="relative min-h-[100vh] h-full w-full">
+          <div className="relative min-h-[100vh] mt-20 h-full w-full">
             <div className="flex flex-row w-full justify-between ">
                 <div >
                     <h2 className="text-primary uppercase ">Projets</h2>
