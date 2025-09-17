@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../../_components/Button";
 import Bluestarsvg from "../../_components/svg/bluestar";
 import CarrouselProject from "./carrouselProject";
@@ -13,7 +14,7 @@ export default function ProjectHome(){
                     <Bluestarsvg />
                     <p className="max-w-1/3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati vero possimus nesciunt tempora fuga eius nam officiis, unde accusamus repellat!</p>
                  </div>
-                <Button texte="Voir plus" />
+               <Button url="/galerie" texte="Voir plus" />
             </div>
             <div>
                 <CarrouselProject />
