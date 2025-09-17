@@ -19,7 +19,7 @@ export default function CarrouselProject(){
 
     return(
         <div className="relative w-full mt-6">
-            <div className="min-h-[50vh] flex flex-row overflow-x-scroll w-full gap-4 no-scrollbar px-4 py-4">
+            <div className="min-h-[50vh] flex flex-row overflow-x-scroll w-full gap-4 no-scrollbar">
                 {projects.map((project) => (
                     <CardProject 
                         key={project.id}
