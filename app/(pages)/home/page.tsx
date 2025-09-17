@@ -9,8 +9,7 @@ import ProjectHome from "./_components/projectHome";
 export default function HomePage(){
 
     return(
-        <div className="relative mx-[68px]">
-            <Logosvg />
+        <div className="mx-[68px]">
             <HeaderHome />
             <ProfilHome />
             <ProjectHome />
