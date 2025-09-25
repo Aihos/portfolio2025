@@ -1,17 +1,33 @@
 import AffichagePoster from "./_component/affichagePoster"
+import GaleriePrint from "./_component/galeriePrint"
 
 
 export default function PageId(){
 
     return(
         <div className="min-h-screen w-full bg-white relative overflow-hidden">
-            {/* SVG étoile en fond */}
+             <div className="flex flex-col justify-center items-center gap-2">
+                  <h1 className="w-full text-center beckam-font text-primary text-[6rem] sm:text-[8rem] leading-none uppercase mb-6">
+                        PORTFOLIO
+                    </h1>
+                     <p className=" max-w-1/2 text-primary text-xs sm:text-sm mb-8 leading-relaxed">
+                        LOREM IPSUM DOLOR SIT AMET CONSECTETUR. AT MASSA AT MASSA VITAE ODIO 
+                        EU SCELERISQUE TURPIS. AT MATTIS EUISMOD ERAT PORTA EGET ELEIFEND VITAE 
+                        NISI TELLUS. MASSA PELLENTESQUE CONSECTETUR SUSPENDISSE NATOQUE. 
+                        ADIPISCING IMPERDIET GRAVIDA LOREM IN NON ALIQUAM SUSCIPIT.
+                    </p>
+
             <AffichagePoster imgLeft="/img/Artémis.png" imgRight="/img/blue.jpg" imgUp="/img/Hermès.png" />
-            <div className="absolute right-[-10vw] top-[-5vw] w-[50vw] h-[50vw] opacity-10 -z-10">
-                <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current">
-                    <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" />
-                </svg>
-            </div>
+
+              <p className=" max-w-2/3 text-primary text-xs sm:text-sm mb-8 leading-relaxed">
+                        LOREM IPSUM DOLOR SIT AMET CONSECTETUR. AT MASSA AT MASSA VITAE ODIO 
+                        EU SCELERISQUE TURPIS. AT MATTIS EUISMOD ERAT PORTA EGET ELEIFEND VITAE 
+                        NISI TELLUS. MASSA PELLENTESQUE CONSECTETUR SUSPENDISSE NATOQUE. 
+                        ADIPISCING IMPERDIET GRAVIDA LOREM IN NON ALIQUAM SUSCIPIT.
+                    </p>
+                <GaleriePrint listeImg={["/img/Artémis.png","/img/blue.jpg", "/img/Hermès.png"]} />
+             </div>
+           
 
             <div className="flex flex-row h-screen items-center px-8">
                 {/* Section gauche - Titre et description */}
