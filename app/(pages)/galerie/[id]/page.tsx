@@ -1,3 +1,4 @@
+import AffichagePoster from "./_component/affichagePoster"
 
 
 export default function PageId(){
@@ -5,6 +6,7 @@ export default function PageId(){
     return(
         <div className="min-h-screen w-full bg-white relative overflow-hidden">
             {/* SVG étoile en fond */}
+            <AffichagePoster img1="" img2="" img3="" />
             <div className="absolute right-[-10vw] top-[-5vw] w-[50vw] h-[50vw] opacity-10 -z-10">
                 <svg viewBox="0 0 100 100" className="w-full h-full text-primary fill-current">
                     <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" />
