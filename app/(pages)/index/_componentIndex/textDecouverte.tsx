@@ -53,7 +53,7 @@ export default function TexteDecouverte(){
     }, []);
 
     return(
-        <section ref={sectionRef} id="textSection" className="min-h-screen w-full flex flex-row justify-center items-center bg-white">
+        <section ref={sectionRef} id="textSection" className="min-h-[110vh] w-full flex flex-row justify-center items-center bg-white">
             <div className="container max-w-4xl mx-auto px-8">
                 <div className="wrapper">
                     <p 
