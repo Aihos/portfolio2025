@@ -9,7 +9,7 @@ import ProjectHome from "./_components/projectHome";
 export default function HomePage(){
 
     return(
-        <div className="mx-[68px]">
+        <div className="mx-[68px] bg-[url(/img/fondCarreau.png)] bg-repeat bg-contain">
             <HeaderHome />
             <ProfilHome />
             <ProjectHome />

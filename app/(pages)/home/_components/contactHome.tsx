@@ -2,7 +2,7 @@ import Bluestarsvg from "../../_components/svg/bluestar";
 
 export default function ContactHome() {
     return (
-        <div className="relative min-h-screen w-full bg-white overflow-hidden flex flex-col items-start px-8 pt-8">
+        <div className="relative min-h-screen w-full overflow-hidden flex flex-col items-start px-8 pt-8">
             {/* SVG étoile en fond */}
             <div className="absolute left-[-8vw] top-[-8vw] w-[60vw] h-[60vw] opacity-20 -z-10 pointer-events-none select-none">
                 <Bluestarsvg />
