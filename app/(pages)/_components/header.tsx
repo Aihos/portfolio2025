@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import BubbleMenu from "./BubbleMenu";
 
 export default function Header(){
     const headerRef = useRef<HTMLDivElement>(null);
@@ -40,8 +41,8 @@ export default function Header(){
     }, []);
 
     return(
-        <div ref={headerRef} className="absolute top-0 w-full grid grid-cols-3  justify-between justify-items-center items-center bg-white min-h-[10vh]">
-            <div></div>
+        <div ref={headerRef} className=" px-[68px] absolute top-0 w-full grid grid-cols-3  justify-between justify-items-center items-center bg-white min-h-[10vh]">
+            <div><BubbleMenu /></div>
             <ul ref={navRef} className="flex flex-row gap-1">
                 <li className="text-primary">INDEX /</li>
                 <li className="text-primary">PROFIL /</li>

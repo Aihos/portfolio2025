@@ -54,14 +54,12 @@ export default function TexteDecouverte(){
 
     return(
         <section ref={sectionRef} id="textSection" className="min-h-[110vh] w-full flex flex-row justify-center items-center bg-white">
-            <div className="container max-w-4xl mx-auto px-8">
+            <div className="container max-w-6xl mx-auto px-8">
                 <div className="wrapper">
                     <p 
                         ref={textRef}
-                        className="w-full text-3xl md:text-4xl lg:text-5xl leading-relaxed text-primary font-bold"
-                    >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis consectetur voluptatem quae ea similique adipisci reprehenderit vero voluptatum, debitis exercitationem nisi ad mollitia? Molestias veniam sint quisquam ea et dolorum nesciunt rem saepe id, amet vero, necessitatibus esse reiciendis molestiae.
-                    </p>
+                        className="w-full text-2xl md:text-3xl lg:text-4xl leading-relaxed text-primary font-bold"
+                    >Le bleu peut être associé à de nombreuses émotions, on peut ressentir de la tristesse, du calme ou bien de la joie. Pour ma part je trouve que cette couleur est un mélange entre le sentiment d'émerveillement et de beauté. Cette magnifique couleur on peut la trouver en particulier sur de nombreux paysages majestueux entre des montagnes, glaciers, lac, rivière. Ainsi je trouve que cette couleur me représente bien car elle est juste source de vie et j'aimerais vous présenter avec cette couleur mon simple univers.</p>
                 </div>
             </div>
         </section>

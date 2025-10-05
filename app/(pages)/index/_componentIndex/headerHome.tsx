@@ -57,7 +57,7 @@ export default function HeaderHome(){
     }, []);
 
     return(
-        <div ref={containerRef} className="min-h-[100vh] w-full flex flex-col justify-start items-center pt-20 relative">
+        <div ref={containerRef} className="bg-[url(/img/fondCarreau.png)] bg-repeat bg-contain px-[68px] min-h-[100vh] w-full flex flex-col justify-start items-center pt-20 relative">
             <Header />
             <h1 ref={titleRef} className="relative w-full text-[270px] text-center tracking-widest text-primary beckam-font">
                 HUGO LERAY
@@ -65,7 +65,7 @@ export default function HeaderHome(){
             <div ref={posterRef}>
                 <AffichagePoster imgLeft="/img/Artémis.png" imgRight="/img/blue.jpg" imgUp="/img/Hermès.png" />
             </div>
-            <div className="absolute bottom-8 w-full flex flex-row justify-between items-center">
+            <div className="absolute  px-[68px] bottom-8 w-full flex flex-row justify-between items-center">
                 <p ref={bottomTextRef} className="text-primary">
                     Développeur web indépendant <br />
                     Bienvenue dans mon univers bleuté

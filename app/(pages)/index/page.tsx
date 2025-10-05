@@ -1,5 +1,6 @@
-import ProjectHome from "../home/_components/projectHome";
+
 import HeaderHome from "./_componentIndex/headerHome";
+import ProjectHome from "./_componentIndex/projectHome";
 import TexteDecouverte from "./_componentIndex/textDecouverte";
 
 
@@ -7,7 +8,7 @@ import TexteDecouverte from "./_componentIndex/textDecouverte";
 export default function HomePage(){
 
     return(
-        <div className="mx-[68px] bg-[url(/img/fondCarreau.png)] bg-repeat bg-contain">
+        <div className=" ">
             <HeaderHome />
             <TexteDecouverte />
             <ProjectHome />

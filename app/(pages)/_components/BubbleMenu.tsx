@@ -15,7 +15,7 @@ type MenuItem = {
 };
 
 export type BubbleMenuProps = {
-  logo: ReactNode | string;
+  logo?: ReactNode | string;
   onMenuClick?: (open: boolean) => void;
   className?: string;
   style?: CSSProperties;
@@ -264,7 +264,7 @@ export default function BubbleMenu({
           aria-label={menuAriaLabel}
           aria-pressed={isMenuOpen}
           style={{
-            background: menuBg,
+           /*  background: menuBg, */
             minHeight: '48px',
             borderRadius: '9999px'
           }}
@@ -329,7 +329,6 @@ export default function BubbleMenu({
                     'w-full',
                     'rounded-[999px]',
                     'no-underline',
-                    'bg-white',
                     'text-inherit',
                     'shadow-[0_4px_14px_rgba(0,0,0,0.10)]',
                     'flex items-center justify-center',
