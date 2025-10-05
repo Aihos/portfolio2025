@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function ProjectHome(){
+export default function BlocContact(){
     const containerRef = useRef<HTMLDivElement>(null);
     const headerContentRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
@@ -24,24 +24,22 @@ export default function ProjectHome(){
     useEffect(() => {
         if (!containerRef.current) return;
 
-        // Animation du conteneur principal avec effet pin
+        // Animation du conteneur principal
         gsap.fromTo(containerRef.current, 
             {
                 y: 100,
             },
             {
-                y: 0,
+                y: -500,
                 opacity: 1,
                 duration: 1.5,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top top",
-                    end: "+=100%",
-                    pin: true,
+                    start: "top 90%",
+                    end: "bottom 50%",
                     scrub: 1,
                     markers: false,
-                    pinSpacing: false,
                 }
             }
         );
@@ -50,8 +48,8 @@ export default function ProjectHome(){
         const elementsTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: headerContentRef.current,
-                start: "top 30%",
-                end: "bottom 20%",
+                start: "top 60%",
+                end: "bottom 50%",
                 toggleActions: "play none none reverse",
             }
         });
@@ -102,10 +100,10 @@ export default function ProjectHome(){
     }, []);
 
     return(
-          <div ref={containerRef} className="px-[68px] relative min-h-[130vh] bg-primary mt-20 h-full w-full pt-20">         
+          <div ref={containerRef} className="px-[68px] relative min-h-[130vh] bg-green-500 h-full w-full pt-20 z-10 -mt-20">         
             <div ref={headerContentRef} className="flex flex-row w-full justify-between ">
                 <div>
-                    <h2 ref={titleRef} className="text-white uppercase ">Projets</h2>
+                    <h2 ref={titleRef} className="text-white uppercase ">Contact</h2>
                     <div ref={starRef}>
                         <Bluestarsvg />
                     </div>
