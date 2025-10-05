@@ -59,7 +59,7 @@ export default function TexteDecouverte(){
                     <p 
                         ref={textRef}
                         className="w-full text-2xl md:text-3xl lg:text-4xl leading-relaxed text-primary font-bold"
-                    >Le bleu peut être associé à de nombreuses émotions, on peut ressentir de la tristesse, du calme ou bien de la joie. Pour ma part je trouve que cette couleur est un mélange entre le sentiment d'émerveillement et de beauté. Cette magnifique couleur on peut la trouver en particulier sur de nombreux paysages majestueux entre des montagnes, glaciers, lac, rivière. Ainsi je trouve que cette couleur me représente bien car elle est juste source de vie et j'aimerais vous présenter avec cette couleur mon simple univers.</p>
+                    >Le bleu peut être associé à de nombreuses émotions, on peut ressentir de la tristesse, du calme ou bien de la joie. Pour ma part je trouve que cette couleur est un mélange entre le sentiment d&apos;émerveillement et de beauté. Cette magnifique couleur on peut la trouver en particulier sur de nombreux paysages majestueux entre des montagnes, glaciers, lac, rivière. Ainsi je trouve que cette couleur me représente bien car elle est juste source de vie et j&apos;aimerais vous présenter avec cette couleur mon simple univers.</p>
                 </div>
             </div>
         </section>

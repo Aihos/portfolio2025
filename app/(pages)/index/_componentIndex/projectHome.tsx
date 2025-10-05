@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../../_components/Button";
 import Bluestarsvg from "../../_components/svg/bluestar";
 import CarrouselProject from "../../home/_components/carrouselProject";
+import LineProject from "./lineProject";
 
 // Registrer le plugin ScrollTrigger
 if (typeof window !== "undefined") {
@@ -99,21 +100,22 @@ export default function ProjectHome(){
     }, []);
 
     return(
-          <div ref={containerRef} className="px-[68px] relative min-h-[100vh] bg-primary mt-20 h-full w-full pt-20">         
+          <div ref={containerRef} className="px-[68px] relative min-h-[150vh] bg-primary mt-20 h-full w-full pt-20">         
             <div ref={headerContentRef} className="flex flex-row w-full justify-between ">
                 <div>
                     <h2 ref={titleRef} className="text-white uppercase ">Projets</h2>
                     <div ref={starRef}>
                         <Bluestarsvg />
                     </div>
-                    <p ref={textRef} className="max-w-1/3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati vero possimus nesciunt tempora fuga eius nam officiis, unde accusamus repellat!</p>
-                </div>
+                   {/*  <p ref={textRef} className="max-w-1/3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati vero possimus nesciunt tempora fuga eius nam officiis, unde accusamus repellat!</p>
+              */}   </div>
                 <div ref={buttonRef}>
                     <Button url="/galerie" texte="Voir plus" />
                 </div>
             </div>
             <div ref={carrouselRef}>
-                <CarrouselProject />
+                <LineProject />
+              {/*   <CarrouselProject /> */}
             </div>
         </div>
     )

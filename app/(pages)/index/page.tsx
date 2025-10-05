@@ -12,6 +12,9 @@ export default function HomePage(){
             <HeaderHome />
             <TexteDecouverte />
             <ProjectHome />
+            <div className="min-h-screen bg-green">
+
+            </div>
         </div>
     )
 }
