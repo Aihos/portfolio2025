@@ -59,7 +59,7 @@ export default function HeaderHome(){
     return(
         <div ref={containerRef} className="bg-[url(/img/fondCarreau.png)] bg-repeat bg-contain px-[68px] min-h-[100vh] w-full flex flex-col justify-start items-center pt-20 relative">
             <Header />
-            <h1 ref={titleRef} className="relative w-full text-[270px] text-center tracking-widest text-primary beckam-font">
+            <h1 ref={titleRef} className="relative w-full text-4xl md:text-[200px] lg:text-[270px] text-center tracking-widest text-primary beckam-font">
                 HUGO LERAY
             </h1>       
             <div ref={posterRef}>
