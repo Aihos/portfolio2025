@@ -85,7 +85,14 @@ export default function BubbleMenu({
 
   // Logo par défaut (votre SVG)
   const defaultLogo = (
-    <svg width="70" height="66" viewBox="0 0 70 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg 
+      width="70" 
+      height="66" 
+      viewBox="0 0 70 66" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
+    >
       <rect x="70" y="66" width="18" height="18" transform="rotate(-180 70 66)" fill="#2A2EC5"/>
       <circle cx="36" cy="57" r="9" transform="rotate(-180 36 57)" fill="#2A2EC5"/>
       <path d="M10.0004 66L-2.51293e-05 48L20 48L10.0004 66Z" fill="#2A2EC5"/>
@@ -101,9 +108,10 @@ export default function BubbleMenu({
   const containerClassName = [
     'bubble-menu',
     useFixedPosition ? 'fixed' : 'absolute',
-    'left-0 right-0 top-8',
+    'left-0 right-0 top-4 sm:top-6 md:top-8',
     'flex items-center justify-start',
-    'gap-4 px-8',
+    'gap-2 sm:gap-4',
+    'px-4 sm:px-6 md:px-8',
     'pointer-events-none',
     'z-[1001]',
     className
@@ -252,9 +260,9 @@ export default function BubbleMenu({
             'bubble logo-bubble',
             'inline-flex items-center justify-center',
             'pointer-events-auto',
-            'h-12 md:h-14',
-            'px-4 md:px-8',
-            'gap-2',
+            'h-10 sm:h-12 md:h-14 lg:h-16',
+            'px-2 sm:px-4 md:px-6 lg:px-8',
+            'gap-1 sm:gap-2',
             'will-change-transform',
             'cursor-pointer',
             'border-0',
@@ -270,7 +278,7 @@ export default function BubbleMenu({
           }}
         >
           <span
-            className={['logo-content', 'inline-flex items-center justify-center', 'w-[120px] h-full'].join(' ')}
+            className={['logo-content', 'inline-flex items-center justify-center', 'w-16 sm:w-20 md:w-24 lg:w-[120px] h-full'].join(' ')}
             style={
               {
                 ['--logo-max-height']: '60%',
