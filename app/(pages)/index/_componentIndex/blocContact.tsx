@@ -123,18 +123,18 @@ export default function BlocContact(){
     }, []);
 
     return(
-        <div ref={containerRef} className="bg-[url(/img/fondCarreau.png)] bg-white bg-repeat bg-contain px-[68px] min-h-[120vh] w-full flex flex-col justify-start items-center pt-20 relative -mt-20">         
-            <div ref={headerContentRef} className="flex flex-col w-full items-center mb-20">
-                <h2 ref={titleRef} className="text-8xl font-beckam text-primary uppercase mb-8 tracking-wider">Contact</h2>
+        <div ref={containerRef} className="bg-[url(/img/fondCarreau.png)] bg-white bg-repeat bg-contain px-4 md:px-[68px] min-h-[120vh] w-full flex flex-col justify-start items-center pt-20 relative -mt-20">         
+            <div ref={headerContentRef} className="flex flex-col w-full items-center mb-4 md:mb-10">
+                <h2 ref={titleRef} className="text-8xl font-beckam text-primary uppercase tracking-wider">Contact</h2>
                 <div ref={starRef} className="mb-8">
                     <Bluestarsvg />
                 </div>
             </div>
             
             <form ref={formRef} onSubmit={handleSubmit} className="w-full max-w-4xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-2 md:mb-8">
                     {/* Prénom */}
-                    <div className="space-y-3">
+                    <div className="space-y-1 md:space-y-3">
                         <label htmlFor="prenom" className="block text-lg font-beckam text-primary uppercase tracking-wide">
                             Prénom
                         </label>
@@ -151,7 +151,7 @@ export default function BlocContact(){
                     </div>
                     
                     {/* Nom */}
-                    <div className="space-y-3">
+                    <div className="space-y-1 md:space-y-3">
                         <label htmlFor="nom" className="block text-lg font-beckam text-primary uppercase tracking-wide">
                             Nom
                         </label>
@@ -169,7 +169,7 @@ export default function BlocContact(){
                 </div>
                 
                 {/* Email */}
-                <div className="mb-8 space-y-3">
+                <div className="mb-2 md:mb-8 space-y-1 md:space-y-3">
                     <label htmlFor="email" className="block text-lg font-beckam text-primary uppercase tracking-wide">
                         Email
                     </label>
@@ -186,7 +186,7 @@ export default function BlocContact(){
                 </div>
                 
                 {/* Message */}
-                <div className="mb-12 space-y-3">
+                <div className="mb-4 md:mb-12 space-y-1 md:space-y-3">
                     <label htmlFor="message" className="block text-lg font-beckam text-primary uppercase tracking-wide">
                         Message
                     </label>
@@ -203,7 +203,7 @@ export default function BlocContact(){
                 </div>
                 
                 {/* Bouton de soumission */}
-                <div className="flex justify-center mb-8">
+                <div className="flex justify-center mb-2 md:mb-8">
                     <button
                         type="submit"
                         disabled={isSubmitting}

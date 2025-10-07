@@ -57,12 +57,12 @@ export default function HeaderHome(){
     }, []);
 
     return(
-        <div ref={containerRef} className="bg-[url(/img/fondCarreau.png)] bg-repeat bg-contain px-4 md:px-[68px] min-h-[80vh] md:min-h-[100vh] w-full flex flex-col justify-start items-center pt-40 md:pt-20 relative">
+        <div ref={containerRef} className="bg-[url(/img/fondCarreau.png)] bg-repeat bg-contain px-4 md:px-[68px] min-h-[80vh] md:min-h-[100vh] w-full flex flex-col justify-start items-center pt-40 md:pt-30 relative">
             <Header />
             <h1 ref={titleRef} className="relative w-full text-5xl md:text-[200px] lg:text-[270px] text-center tracking-widest text-primary beckam-font">
                 HUGO LERAY
             </h1>       
-            <div ref={posterRef}>
+            <div className="mt-6" ref={posterRef}>
                 <AffichagePoster imgLeft="/img/Artémis.png" imgRight="/img/blue.jpg" imgUp="/img/Hermès.png" />
             </div>
             <div className="absolute px-4 md:px-[68px] bottom-0 md:bottom-8 w-full flex flex-row justify-between items-center">
