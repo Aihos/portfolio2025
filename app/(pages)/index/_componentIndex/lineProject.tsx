@@ -48,10 +48,10 @@ export default function LineProject(){
 
     return(
         <div ref={containerRef} className="flex flex-col w-full gap-4">
-            {projectEnsemble.map((project, index) => (
+            {projectEnsemble.map((project) => (
                 <LineObject 
-                    key={index}
-                    nom={project.nom}
+                    key={project.id}
+                    {...project}
                 />
             ))}
         </div>

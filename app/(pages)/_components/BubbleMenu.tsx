@@ -108,7 +108,7 @@ export default function BubbleMenu({
   const containerClassName = [
     'bubble-menu',
     useFixedPosition ? 'fixed' : 'absolute',
-    'left-0 right-0 top-4 sm:top-6 md:top-8',
+    'left-0 right-0 top-4 sm:top-4 md:top-4',
     'flex items-center justify-start',
     'gap-2 sm:gap-4',
     'px-4 sm:px-6 md:px-8',
