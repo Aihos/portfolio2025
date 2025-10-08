@@ -27,6 +27,13 @@ export default function GalerieEnsemble(){
                             <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 font-beckam text-sm">
                                 {project.numero}
                             </div>
+                            <div className={`absolute top-4 right-4 px-3 py-1 text-xs font-semibold uppercase tracking-wide ${
+                                project.type === 'dev' 
+                                    ? 'bg-green-500 text-white' 
+                                    : 'bg-purple-500 text-white'
+                            }`}>
+                                {project.type === 'dev' ? 'DEV' : 'DESIGN'}
+                            </div>
                         </div>
                         
                         <div className="p-6">
