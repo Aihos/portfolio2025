@@ -1,8 +1,8 @@
 import Image from "next/image";
-import HomePage from "./(pages)/home/page";
+import DeuxHomePage from "./(pages)/index/page";
 
 export default function Home() {
   return (
-    <HomePage />
+    <DeuxHomePage />
   );
 }

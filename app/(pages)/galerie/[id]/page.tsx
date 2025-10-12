@@ -35,21 +35,49 @@ export default function PageId({ params }: PageProps){
                      <p className="max-w-4xl text-primary text-sm sm:text-base mb-8 leading-relaxed text-center">
                         {project.description}
                     </p>
+ {/* Section simplifiée pour les projets graphiques */}
+            {project.type === "graph" && (
+                <div className="flex flex-col justify-center items-center px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
+                    <div className="text-center mb-8">
+                        <div className="flex items-center justify-center gap-4 mb-6">
+                            <h2 className="font-beckam text-primary text-4xl sm:text-6xl md:text-7xl leading-none uppercase">
+                                {project.numero}
+                            </h2>
+                            <div className="text-primary/60 text-lg">
+                                {project.annee}
+                            </div>
+                        </div>
+                        
+                        <h3 className="font-beckam text-primary text-xl sm:text-2xl md:text-3xl leading-none uppercase mb-6">
+                            PROJET GRAPHIQUE
+                        </h3>
 
-                    <AffichagePoster 
-                        imgLeft={project.imgLeft} 
-                        imgRight={project.imgRight} 
-                        imgUp={project.imgUp} 
-                    />
+                        {/* Technologies/Outils pour le graphisme */}
+                        <div className="mb-8">
+                            <h4 className="text-primary font-semibold mb-3 uppercase tracking-wide">Outils utilisés :</h4>
+                            <div className="flex flex-wrap justify-center gap-2">
+                                {project.technologies.map((tech, index) => (
+                                    <span 
+                                        key={index}
+                                        className="bg-primary/10 text-primary px-3 py-1 text-sm border border-primary/20"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
 
-                    <p className="max-w-5xl text-primary text-xs sm:text-sm mb-8 leading-relaxed text-center">
-                        {project.descriptionLongue}
-                    </p>
-                    
-                    <GaleriePrint listeImg={project.imgGallery} />
-             </div>
-           
-            {/* Section détaillée avec image - Affichée uniquement pour les projets de développement */}
+                        {/* Bouton retour */}
+                        <Link 
+                            href="/galerie"
+                            className="inline-block border-2 border-primary text-primary font-bold py-3 px-8 uppercase tracking-wider hover:bg-primary hover:text-white transition-all"
+                        >
+                            RETOUR GALERIE
+                        </Link>
+                    </div>
+                </div>
+            )}
+                {/* Section détaillée avec image - Affichée uniquement pour les projets de développement */}
             {project.type === "dev" && (
                 <div className="flex flex-col lg:flex-row min-h-[50vh] items-center px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
                     {/* Section gauche - Titre et description */}
@@ -116,50 +144,23 @@ export default function PageId({ params }: PageProps){
                         </div>
                     </div>
                 </div>
-            )}
+            )}   
+             <AffichagePoster 
+                        imgLeft={project.imgLeft} 
+                        imgRight={project.imgRight} 
+                        imgUp={project.imgUp} 
+                    />
 
-            {/* Section simplifiée pour les projets graphiques */}
-            {project.type === "graph" && (
-                <div className="flex flex-col justify-center items-center px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
-                    <div className="text-center mb-8">
-                        <div className="flex items-center justify-center gap-4 mb-6">
-                            <h2 className="font-beckam text-primary text-4xl sm:text-6xl md:text-7xl leading-none uppercase">
-                                {project.numero}
-                            </h2>
-                            <div className="text-primary/60 text-lg">
-                                {project.annee}
-                            </div>
-                        </div>
-                        
-                        <h3 className="font-beckam text-primary text-xl sm:text-2xl md:text-3xl leading-none uppercase mb-6">
-                            PROJET GRAPHIQUE
-                        </h3>
+                    <p className="max-w-5xl text-primary text-xs sm:text-sm mb-8 leading-relaxed text-center">
+                        {project.descriptionLongue}
+                    </p>
+                    
+                    <GaleriePrint listeImg={project.imgGallery} />
+             </div>
+           
+            
 
-                        {/* Technologies/Outils pour le graphisme */}
-                        <div className="mb-8">
-                            <h4 className="text-primary font-semibold mb-3 uppercase tracking-wide">Outils utilisés :</h4>
-                            <div className="flex flex-wrap justify-center gap-2">
-                                {project.technologies.map((tech, index) => (
-                                    <span 
-                                        key={index}
-                                        className="bg-primary/10 text-primary px-3 py-1 text-sm border border-primary/20"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Bouton retour */}
-                        <Link 
-                            href="/galerie"
-                            className="inline-block border-2 border-primary text-primary font-bold py-3 px-8 uppercase tracking-wider hover:bg-primary hover:text-white transition-all"
-                        >
-                            RETOUR GALERIE
-                        </Link>
-                    </div>
-                </div>
-            )}
+           
         </div>
     )
 }

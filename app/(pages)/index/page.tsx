@@ -6,7 +6,7 @@ import TexteDecouverte from "./_componentIndex/textDecouverte";
 
 
 
-export default function HomePage(){
+export default function DeuxHomePage(){
 
     return(
         <div className=" ">
