@@ -14,6 +14,7 @@ export default function DeuxHomePage(){
             <HeaderHome />
             <BandeauTourne />
             <TexteDecouverte />
+            {/* <BandeauTourne /> */}
             <ProjectHome />
             <BlocContact />
         </div>

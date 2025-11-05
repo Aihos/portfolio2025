@@ -139,7 +139,7 @@ export default function TexteDecouverte(){
                     <p 
                         ref={textRef}
                         className="w-full text-2xl md:text-3xl lg:text-4xl leading-relaxed text-primary font-bold"
-                    >Le bleu peut être associé à de nombreuses émotions, on peut ressentir de la tristesse, du calme ou bien de la joie. Pour ma part je trouve que cette couleur est un mélange entre le sentiment d&apos;émerveillement et de beauté. Cette magnifique couleur on peut la trouver en particulier sur de nombreux paysages majestueux entre des montagnes, glaciers, lac, rivière. Ainsi je trouve que cette couleur me représente bien car elle est juste source de vie et j&apos;aimerais vous présenter avec cette couleur mon simple univers.</p>
+                    >Le bleu peut être associé à de nombreuses émotions : tristesse, calme ou joie. Pour ma part, cette couleur évoque l&apos;émerveillement et la créativité. Comme on la retrouve dans les paysages majestueux entre montagnes, glaciers et rivières, je la retrouve dans chaque projet que je crée. Le développement web, c&apos;est transformer cette beauté en expériences digitales. Chaque projet est un nouveau paysage à explorer, chaque interface une toile où le bleu devient le fil conducteur. Cette couleur me représente : elle est source de vie, d&apos;innovation et de possibilités infinies.</p>
                 </div>
             </div>           
         </section>

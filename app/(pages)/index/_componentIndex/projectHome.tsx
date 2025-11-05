@@ -25,7 +25,7 @@ export default function ProjectHome(){
         if (!containerRef.current) return;
 
         // Animation du conteneur principal avec effet pin
-        gsap.fromTo(containerRef.current, 
+      /*   gsap.fromTo(containerRef.current, 
             {
                 y: 100,
             },
@@ -38,13 +38,11 @@ export default function ProjectHome(){
                     trigger: containerRef.current,
                     start: "top top",
                     end: "+=100%",
-                    pin: true,
                     scrub: 1,
                     markers: false,
-                    pinSpacing: false,
                 }
             }
-        );
+        ); */
 
         // Animation séquentielle des éléments internes
         const elementsTimeline = gsap.timeline({
@@ -102,7 +100,7 @@ export default function ProjectHome(){
     }, []);
 
     return(
-          <div ref={containerRef} className="px-4 sm:px-8 md:px-12 lg:px-[68px] relative min-h-[130vh] bg-primary mt-20 h-full w-full pt-20">         
+          <div ref={containerRef} className="px-4 sm:px-8 md:px-12 lg:px-[68px] relative min-h-[130vh] bg-primary h-full w-full pt-20">         
             <div ref={headerContentRef} className="flex flex-col md:flex-row w-full justify-between gap-4 md:gap-0">
                 <div>
                     <h2 ref={titleRef} className="text-white uppercase text-4xl sm:text-6xl lg:text-8xl font-beckam">Projets</h2>
