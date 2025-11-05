@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 // Registrer le plugin ScrollTrigger
 if (typeof window !== "undefined") {
@@ -13,6 +14,7 @@ export default function TexteDecouverte(){
     const textRef = useRef<HTMLParagraphElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
     const shapesRef = useRef<HTMLDivElement>(null);
+    const floatingImagesRef = useRef<HTMLDivElement[]>([]);
 
     useEffect(() => {
         if (!textRef.current || !sectionRef.current || !shapesRef.current) return;
@@ -65,6 +67,30 @@ export default function TexteDecouverte(){
             }
         });
 
+        // Animation des images flottantes
+        floatingImagesRef.current.forEach((img, index) => {
+            if (img) {
+                gsap.fromTo(img, 
+                    { 
+                        y: 0,
+                        opacity: 0.6
+                    },
+                    {
+                        y: -400,
+                        opacity: 1,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: "top top",
+                            end: "+=150%",
+                            scrub: 1 + (index * 0.3), // Vitesses différentes pour chaque image
+                            markers: false,
+                        }
+                    }
+                );
+            }
+        });
+
         // Cleanup
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -72,8 +98,61 @@ export default function TexteDecouverte(){
     }, []);
 
     return(
-        <section ref={sectionRef} id="textSection" className="min-h-[110vh] w-full flex flex-row justify-center items-center bg-white relative">
-            <div className="container max-w-6xl mx-auto px-8">
+        <section ref={sectionRef} id="textSection" className="min-h-[110vh] w-full flex flex-row justify-center items-center bg-white relative overflow-hidden">
+            {/* Images flottantes */}
+            <div 
+                ref={(el) => { if (el) floatingImagesRef.current[0] = el; }}
+                className="absolute left-[10%] top-[60%] w-32 md:w-48 lg:w-64 opacity-60 pointer-events-none z-0"
+            >
+                <Image 
+                    src="/img/Artémis.png" 
+                    alt="Floating decoration"
+                    width={300}
+                    height={300}
+                    className="w-full h-auto"
+                />
+            </div>
+
+            <div 
+                ref={(el) => { if (el) floatingImagesRef.current[1] = el; }}
+                className="absolute right-[15%] top-[70%] w-24 md:w-36 lg:w-48 opacity-60 pointer-events-none z-0"
+            >
+                <Image 
+                    src="/img/Hermès.png" 
+                    alt="Floating decoration"
+                    width={250}
+                    height={250}
+                    className="w-full h-auto"
+                />
+            </div>
+
+            <div 
+                ref={(el) => { if (el) floatingImagesRef.current[2] = el; }}
+                className="absolute left-[20%] top-[40%] w-20 md:w-32 lg:w-40 opacity-50 pointer-events-none z-0"
+            >
+                <Image 
+                    src="/img/blue.jpg" 
+                    alt="Floating decoration"
+                    width={200}
+                    height={200}
+                    className="w-full h-auto rounded-full"
+                />
+            </div>
+
+            <div 
+                ref={(el) => { if (el) floatingImagesRef.current[3] = el; }}
+                className="absolute right-[8%] top-[50%] w-28 md:w-40 lg:w-52 opacity-60 pointer-events-none z-0"
+            >
+                <Image 
+                    src="/img/Artémis.png" 
+                    alt="Floating decoration"
+                    width={280}
+                    height={280}
+                    className="w-full h-auto"
+                />
+            </div>
+
+            <div className="container max-w-6xl mx-auto px-8 relative z-10">
                 <div className="wrapper">
                     <p 
                         ref={textRef}
@@ -81,23 +160,7 @@ export default function TexteDecouverte(){
                     >Le bleu peut être associé à de nombreuses émotions, on peut ressentir de la tristesse, du calme ou bien de la joie. Pour ma part je trouve que cette couleur est un mélange entre le sentiment d&apos;émerveillement et de beauté. Cette magnifique couleur on peut la trouver en particulier sur de nombreux paysages majestueux entre des montagnes, glaciers, lac, rivière. Ainsi je trouve que cette couleur me représente bien car elle est juste source de vie et j&apos;aimerais vous présenter avec cette couleur mon simple univers.</p>
                 </div>
             </div>
-
-            {/* Formes géométriques en bas */}
-            <div ref={shapesRef} className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-8 pointer-events-none">
-                {/* Cercles */}
-                <div className="w-12 h-12 bg-primary rounded-full"></div>
-                <div className="w-8 h-8 bg-primary rounded-full"></div>
-                <div className="w-16 h-16 bg-primary rounded-full"></div>
-                
-                {/* Carrés */}
-                <div className="w-10 h-10 bg-primary"></div>
-                <div className="w-14 h-14 bg-primary"></div>
-                <div className="w-6 h-6 bg-primary"></div>
-                
-                {/* Plus de cercles */}
-                <div className="w-10 h-10 bg-primary rounded-full"></div>
-                <div className="w-12 h-12 bg-primary"></div>
-            </div>
+          
         </section>
     )
 }

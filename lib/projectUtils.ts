@@ -28,7 +28,7 @@ export const Projects : ProjectList[] = [
         imgGallery: ["/img/Artémis.png", "/img/blue.jpg", "/img/Hermès.png"],
         descriptionLongue: "LOREM IPSUM DOLOR SIT AMET CONSECTETUR. AT MASSA AT MASSA VITAE ODIO EU SCELERISQUE TURPIS. AT MATTIS EUISMOD ERAT PORTA EGET ELEIFEND VITAE NISI TELLUS. MASSA PELLENTESQUE CONSECTETUR SUSPENDISSE NATOQUE. ADIPISCING IMPERDIET GRAVIDA LOREM IN NON ALIQUAM SUSCIPIT.",
         numero: "01",
-        siteUrl: "https://artemis-project.com",
+        siteUrl: "",
         technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
         annee: "2024"
     },
@@ -43,7 +43,7 @@ export const Projects : ProjectList[] = [
         imgGallery: ["/img/Hermès.png", "/img/Artémis.png", "/img/blue.jpg"],
         descriptionLongue: "PLATEFORME INNOVATIVE POUR LE COMMERCE EN LIGNE. INTÉGRATION COMPLÈTE DES SYSTÈMES DE PAIEMENT ET GESTION AVANCÉE DES COMMANDES. INTERFACE UTILISATEUR MODERNE ET RESPONSIVE POUR UNE EXPÉRIENCE OPTIMALE.",
         numero: "02",
-        siteUrl: "https://hermes-platform.com",
+        siteUrl: "",
         technologies: ["Vue.js", "Node.js", "MongoDB", "Stripe"],
         annee: "2024"
     },
@@ -72,7 +72,7 @@ export const Projects : ProjectList[] = [
         imgGallery: ["/img/Artémis.png", "/img/blue.jpg", "/img/Hermès.png"],
         descriptionLongue: "DÉVELOPPEMENT D'UN PORTFOLIO INTERACTIF AVEC ANIMATIONS SOPHISTIQUÉES. UTILISATION DE GSAP POUR DES TRANSITIONS FLUIDES ET UNE EXPÉRIENCE UTILISATEUR IMMERSIVE.",
         numero: "04",
-        siteUrl: "https://portfolio-moderne.com",
+        siteUrl: "",
         technologies: ["Next.js", "GSAP", "Three.js", "Tailwind CSS"],
         annee: "2023"
     },
@@ -101,7 +101,7 @@ export const Projects : ProjectList[] = [
         imgGallery: ["/img/Hermès.png", "/img/blue.jpg", "/img/Artémis.png"],
         descriptionLongue: "CRÉATION D'UN DASHBOARD ADMINISTRATEUR COMPLET AVEC ANALYTICS EN TEMPS RÉEL. GESTION DES UTILISATEURS, RAPPORTS DÉTAILLÉS ET INTERFACE MODERNE POUR LES ADMINISTRATEURS.",
         numero: "06",
-        siteUrl: "https://dashboard-admin.com",
+        siteUrl: "",
         technologies: ["React", "Chart.js", "Node.js", "PostgreSQL"],
         annee: "2022"
     },
