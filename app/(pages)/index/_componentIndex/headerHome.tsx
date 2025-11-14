@@ -57,21 +57,21 @@ export default function HeaderHome(){
     }, []);
 
     return(
-        <div ref={containerRef} className="bg-[url(/img/fondCarreau.png)] bg-repeat bg-contain px-4 md:px-[68px] min-h-[80vh] md:min-h-[100vh] w-full flex flex-col justify-start items-center pt-40 md:pt-30 relative">
+        <div ref={containerRef} className="bg-[url(/img/fondCarreau.png)] bg-repeat bg-contain px-0 md:px-[68px] min-h-[90vh] md:min-h-[100vh] w-full flex flex-col justify-start items-center pt-30 md:pt-30 relative">
             <Header />
-            <h1 ref={titleRef} className="relative w-full text-5xl md:text-[200px] lg:text-[270px] text-center tracking-widest text-primary beckam-font">
+            <h1 ref={titleRef} className="relative w-full text-5xl md:text-[100px] lg:text-[180px] xl:text-[270px] text-center tracking-widest text-primary beckam-font">
                 HUGO LERAY
             </h1>       
             <div className="mt-6" ref={posterRef}>
                 <AffichagePoster imgLeft="/img/Artémis.png" imgRight="/img/blue.jpg" imgUp="/img/Hermès.png" />
             </div>
-            <div className="absolute px-4 md:px-[68px] bottom-0 md:bottom-8 w-full flex flex-row justify-between items-center">
+            <div className="absolute px-4 md:px-[68px] bottom-8 w-full flex flex-row justify-between items-start">
                 <p ref={bottomTextRef} className="text-primary">
                     Développeur web indépendant <br />
                     Bienvenue dans mon univers bleuté
                 </p>
-                <div ref={scrollTextRef} className="flex flex-row gap-1">
-                    <p className="text-primary font-semibold">Scroll pour descendre </p>  
+                <div ref={scrollTextRef} className="flex flex-row max-sm:justify-end gap-0 md:gap-1">
+                    <p className="text-primary font-semibold w-1/2 md:w-full">Scroll pour descendre </p>  
                     <ArrowStylisee />
                 </div>
             </div> 
