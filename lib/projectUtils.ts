@@ -78,48 +78,62 @@ export const Projects : ProjectList[] = [
         annee: "2023"
     },
     {
-        id: "app-mobile",
-        nom: "Application Mobile",
-        description: "App mobile cross-platform avec React Native",
-        type: "dev",
+        id: "5",
+        nom: "Affiche dieux de l'Olympe",
+        description: "Collection d'affiches des dieux de l'Olympe",
+        type: "graph",
         imgLeft: "/img/blue.jpg",
         imgRight: "/img/Artémis.png",
         imgUp: "/img/Hermès.png",
         imgGallery: ["/img/blue.jpg", "/img/Artémis.png", "/img/Hermès.png"],
         descriptionLongue: "APPLICATION MOBILE NATIVE POUR IOS ET ANDROID. INTERFACE INTUITIVE ET PERFORMANCES OPTIMISÉES POUR UNE EXPÉRIENCE UTILISATEUR EXCEPTIONNELLE SUR MOBILE.",
         numero: "05",
-        technologies: ["React Native", "Expo", "Firebase", "Redux"],
-        annee: "2023"
+        technologies: ["Affinity", "Figma"],
+        annee: "2025"
     },
     {
-        id: "dashboard-admin",
-        nom: "Dashboard Admin",
-        description: "Interface d'administration avec tableaux de bord analytics",
-        type: "dev",
+        id: "6",
+        nom: "Motion Design CV",
+        description: "Motion design présentant mon CV",
+        type: "graph",
         imgLeft: "/img/Hermès.png",
         imgRight: "/img/blue.jpg",
         imgUp: "/img/Artémis.png",
         imgGallery: ["/img/Hermès.png", "/img/blue.jpg", "/img/Artémis.png"],
         descriptionLongue: "CRÉATION D'UN DASHBOARD ADMINISTRATEUR COMPLET AVEC ANALYTICS EN TEMPS RÉEL. GESTION DES UTILISATEURS, RAPPORTS DÉTAILLÉS ET INTERFACE MODERNE POUR LES ADMINISTRATEURS.",
         numero: "06",
-        siteUrl: "",
-        technologies: ["React", "Chart.js", "Node.js", "PostgreSQL"],
-        annee: "2022"
+        technologies: ["After Effects"],
+        annee: "2024"
     },
     {
-        id: "site-vitrine",
-        nom: "Site Vitrine",
-        description: "Site corporate responsive avec CMS headless",
+        id: "7",
+        nom: "Diorama 3D",
+        description: "Diorama 3D réalisé avec Blender",
         type: "graph",
-        imgLeft: "/img/Artémis.png",
-        imgRight: "/img/Hermès.png",
-        imgUp: "/img/blue.jpg",
+        imgLeft: "/img/diorama.png",
+        imgRight: "/img/diorama.png",
+        imgUp: "/img/diorama.png",
         imgGallery: ["/img/Artémis.png", "/img/Hermès.png", "/img/blue.jpg"],
-        descriptionLongue: "DÉVELOPPEMENT D'UN SITE VITRINE CORPORATE AVEC CMS HEADLESS. OPTIMISATION SEO AVANCÉE ET PERFORMANCES WEB POUR UN RÉFÉRENCEMENT OPTIMAL ET UNE EXPÉRIENCE UTILISATEUR PARFAITE.",
+        descriptionLongue: "DIORAMA 3D CRÉÉ AVEC BLENDER.",
         numero: "07",
-        technologies: ["Figma", "Adobe Creative Suite", "Branding", "Print Design"],
-        annee: "2022"
-    }
+        technologies: ["Blender", "3D Modeling", "Rendering"],
+        annee: "2024"
+    },
+     {
+        id: "8",
+        nom: "Cite vitrine de cocktail",
+        description: "Site vitrine parlant du jeu Draconis",
+        type: "dev",
+        imgLeft: "/img/Artémis.png",
+        imgRight: "/img/blue.jpg",
+        imgUp: "/img/Hermès.png",
+        imgGallery: ["/img/Artémis.png", "/img/blue.jpg", "/img/Hermès.png"],
+        descriptionLongue: "APPERCU DU SITE VITRINE DÉDIÉ AU JEU DRACONIS, PRÉSENTANT L'UNIVERS, LES PERSONNAGES ET LES FONCTIONNALITÉS DU JEU. INCLUT DES CAPTURES D'ÉCRAN ET VIDEOS.",
+        numero: "04",
+        siteUrl: "https://draconis.netlify.app/",
+        technologies: ["HTML, CSS", "JavaScript", "Responsive Design"],
+        annee: "2025"
+    },
 ]
 
 export function getProjectById(id: string): ProjectList | undefined {
