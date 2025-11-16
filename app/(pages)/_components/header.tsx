@@ -46,7 +46,7 @@ export default function Header(){
             <div><BubbleMenu /></div>
             <ul ref={navRef} className="hidden md:flex flex-row gap-1 text-xs lg:text-sm">
                 <Link href={"/index"} className="text-primary border-b-1/0 hover:border-b-1 cursor-pointer transition-all duration-200">INDEX /</Link>
-                <Link href={"/profil"} className="text-primary border-b-1/0 hover:border-b-1 cursor-pointer transition-all duration-200">PROFIL /</Link>
+                {/* <Link href={"/profil"} className="text-primary border-b-1/0 hover:border-b-1 cursor-pointer transition-all duration-200">PROFIL /</Link> */}
                 <Link href={"/galerie"} className="text-primary border-b-1/0 hover:border-b-1 cursor-pointer transition-all duration-200">PROJETS</Link>
             </ul>
             <Link href="mailto:hugoleray53@gmail.com" className="w-full text-right text-primary uppercase text-xs sm:text-sm lg:text-base truncate">hugoleray53@gmail.com</Link>

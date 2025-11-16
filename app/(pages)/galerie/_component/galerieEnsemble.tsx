@@ -3,18 +3,20 @@
 import { getAllProjects } from "../../../../lib/projectUtils";
 import Link from "next/link";
 import Image from "next/image";
+import Bluestarsvg from "../../_components/svg/bluestar";
 
 export default function GalerieEnsemble(){
     const projects = getAllProjects();
 
     return(
         <div className="px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <Bluestarsvg />
                 {projects.map((project) => (
                     <Link 
                         key={project.id}
                         href={`/galerie/${project.id}`}
-                        className="group block bg-white border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+                        className="group block rounded-2xl overflow-hidden bg-white border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
                     >
                         <div className="relative aspect-[4/3] overflow-hidden">
                             <Image
@@ -23,20 +25,17 @@ export default function GalerieEnsemble(){
                                 fill
                                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            />
-                            <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 font-beckam text-sm">
-                                {project.numero}
-                            </div>
+                            />                            
                             <div className={`absolute top-4 right-4 px-3 py-1 text-xs font-semibold uppercase tracking-wide ${
                                 project.type === 'dev' 
-                                    ? 'bg-green-500 text-white' 
-                                    : 'bg-purple-500 text-white'
+                                    ? 'bg-primary text-white' 
+                                    : 'bg-white text-primary'
                             }`}>
                                 {project.type === 'dev' ? 'DEV' : 'DESIGN'}
                             </div>
                         </div>
                         
-                        <div className="p-6">
+                        <div className="p-6 bg-white">
                             <h3 className="font-beckam text-primary text-xl md:text-2xl uppercase mb-3 group-hover:scale-105 transition-transform">
                                 {project.nom}
                             </h3>

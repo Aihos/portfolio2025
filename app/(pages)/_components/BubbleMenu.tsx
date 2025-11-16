@@ -36,14 +36,7 @@ const DEFAULT_ITEMS: MenuItem[] = [
     ariaLabel: 'Index',
     rotation: -8,
     hoverStyles: { bgColor: '#2A2EC5', textColor: '#ffffff' }
-  },
-  {
-    label: 'Profil',
-    href: '/profil',
-    ariaLabel: 'Profil',
-    rotation: 8,
-    hoverStyles: { bgColor: '#2A2EC5', textColor: '#ffffff' }
-  },
+  }, 
   {
     label: 'Galerie',
     href: '/galerie',

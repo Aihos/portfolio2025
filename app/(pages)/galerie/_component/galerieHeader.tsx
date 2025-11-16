@@ -6,11 +6,10 @@ import Bluestarsvg from "../../_components/svg/bluestar";
 export default function GalerieHeader(){
 
     return(
-         <div className="min-h-[100vh] w-full flex flex-col justify-center items-center">
+         <div className="bg-[url(/img/fondCarreau.png)] bg-repeat bg-contain min-h-[70vh] w-full flex flex-col justify-center items-center">
             <Header />
-                    <h1 className="relative text-primary">GALERIE</h1>
-                    <Bluestarsvg />
-                    <p className="max-w-1/2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tenetur explicabo quidem delectus placeat beatae modi accusamus nostrum vel neque.</p>
+                    <h1 className="w-full text-center font-beckam text-primary text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-none uppercase">GALERIE</h1>
+                    
                 </div>
     )
 }
