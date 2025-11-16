@@ -4,6 +4,7 @@ import GaleriePrint from "./_component/galeriePrint"
 import { getProjectById, getAllProjects } from "../../../../lib/projectUtils"
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Header from "../../_components/header"
 
 interface PageProps {
     params: {
@@ -27,15 +28,15 @@ export default function PageId({ params }: PageProps){
 
     return(
         <div className="min-h-screen w-full bg-white relative overflow-hidden pt-20">
+            <Header />
              {/* Section centrale avec poster */}
              <div className="flex flex-col justify-center items-center gap-8 px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
-                  <h1 className="w-full text-center font-beckam text-primary text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-none uppercase mb-6">
+                  <h1 className="w-full text-center font-beckam text-primary text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-none uppercase">
                         {project.nom}
                     </h1>
                      <p className="max-w-4xl text-primary text-sm sm:text-base mb-8 leading-relaxed text-center">
                         {project.description}
                     </p>
- {/* Section simplifiée pour les projets graphiques */}
             {project.type === "graph" && (
                 <div className="flex flex-col justify-center items-center px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
                     <div className="text-center mb-8">
@@ -77,9 +78,8 @@ export default function PageId({ params }: PageProps){
                     </div>
                 </div>
             )}
-                {/* Section détaillée avec image - Affichée uniquement pour les projets de développement */}
             {project.type === "dev" && (
-                <div className="flex flex-col lg:flex-row min-h-[50vh] items-center px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
+                <div className="flex w-full flex-col lg:flex-row min-h-[50vh] items-center px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
                     {/* Section gauche - Titre et description */}
                     <div className="flex-1 flex flex-col justify-center lg:pr-12 mb-8 lg:mb-0">
                         <div className="flex items-center gap-4 mb-6">
@@ -108,6 +108,10 @@ export default function PageId({ params }: PageProps){
                                     </span>
                                 ))}
                             </div>
+                            
+                    <p className="max-w-2xl text-primary text-xs sm:text-sm mt-3 leading-relaxed text-left">
+                        {project.descriptionLongue}
+                    </p>
                         </div>
 
                         {/* Boutons */}
@@ -145,15 +149,12 @@ export default function PageId({ params }: PageProps){
                     </div>
                 </div>
             )}   
-             <AffichagePoster 
+             {/* <AffichagePoster 
                         imgLeft={project.imgLeft} 
                         imgRight={project.imgRight} 
                         imgUp={project.imgUp} 
-                    />
+                    /> */}
 
-                    <p className="max-w-5xl text-primary text-xs sm:text-sm mb-8 leading-relaxed text-center">
-                        {project.descriptionLongue}
-                    </p>
                     
                     <GaleriePrint listeImg={project.imgGallery} />
              </div>

@@ -30,11 +30,14 @@ export default function TexteDecouverte(){
 
         const wordElements = textRef.current.querySelectorAll(".word");
 
+        // Détecter si on est sur mobile
+        const isMobile = window.innerWidth < 768;
+
         // Animation GSAP avec ScrollTrigger
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: sectionRef.current,
-                start: "top top",
+                start: "top top", // Active plus tôt sur mobile
                 end: "+=150%",
                 pin: true,
                 scrub: true,
@@ -63,7 +66,7 @@ export default function TexteDecouverte(){
                         ease: "none",
                         scrollTrigger: {
                             trigger: sectionRef.current,
-                            start: "top top",
+                            start: isMobile ? "top 80%" : "top top", // Active plus tôt sur mobile
                             end: "+=150%",
                             scrub: 1 + (index * 0.3), // Vitesses différentes pour chaque image
                             markers: false,
