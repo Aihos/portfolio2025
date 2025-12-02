@@ -16,9 +16,9 @@ export default function GalerieEnsemble(){
                     <Link 
                         key={project.id}
                         href={`/galerie/${project.id}`}
-                        className="group block rounded-2xl overflow-hidden bg-white border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+                        className="group block border-1 p-1 overflow-hidden bg-white border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
                     >
-                        <div className="relative aspect-[4/3] overflow-hidden">
+                        <div className="border-1 relative aspect-[4/3] overflow-hidden">
                             <Image
                                 src={project.imgUp}
                                 alt={project.nom}
@@ -44,7 +44,7 @@ export default function GalerieEnsemble(){
                                 {project.description}
                             </p>
                             
-                            <div className="flex flex-wrap gap-2 mb-4">
+                           {/*  <div className="flex flex-wrap gap-2 mb-4">
                                 {project.technologies.slice(0, 3).map((tech, techIndex) => (
                                     <span 
                                         key={techIndex}
@@ -58,16 +58,16 @@ export default function GalerieEnsemble(){
                                         +{project.technologies.length - 3}
                                     </span>
                                 )}
-                            </div>
+                            </div> */}
                             
-                            <div className="flex justify-between items-center">
+                          {/*   <div className="flex justify-between items-center">
                                 <span className="text-primary/60 text-sm">
                                     {project.annee}
                                 </span>
                                 <span className="text-primary text-sm font-semibold group-hover:translate-x-1 transition-transform">
                                     Voir le projet →
                                 </span>
-                            </div>
+                            </div> */}
                         </div>
                     </Link>
                 ))}
