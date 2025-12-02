@@ -24,7 +24,7 @@ export default function GaleriePrint({listeImg}: {listeImg : string[]}){
     };
 
     return(
-       <div className="w-full max-w-6xl mx-auto p-4">
+       <div className="w-full max-w-6xl mx-auto p-4 z-1">
             <div className="grid h-full grid-cols-5 gap-4">
                 {listeImg.map((imgUrl, index) => (
                     <div 

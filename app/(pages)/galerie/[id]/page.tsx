@@ -30,17 +30,17 @@ export default function PageId({ params }: PageProps){
         <div className="min-h-screen w-full bg-white relative overflow-hidden pt-20">
             <Header />
              {/* Section centrale avec poster */}
-             <div className="flex flex-col justify-center items-center gap-8 px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
-                  <h1 className="w-full text-center font-beckam text-primary text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-none uppercase">
+             <div className="flex flex-col justify-center items-center gap-8 px-4 sm:px-8 md:px-12 lg:px-[68px] py-16 ">
+                 {/*  <h1 className="w-full text-center font-beckam text-primary text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-none uppercase">
                         {project.nom}
                     </h1>
                      <p className="max-w-4xl text-primary text-sm sm:text-base mb-8 leading-relaxed text-center">
                         {project.description}
-                    </p>
+                    </p> */}
             {project.type === "graph" && (
                 <div className="flex flex-col justify-center items-center px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
                     <div className="text-center mb-8">
-                        <div className="flex items-center justify-center gap-4 mb-6">
+                        <div className="relative flex items-center justify-center gap-4 mb-6 z-1">
                             <h2 className="font-beckam text-primary text-4xl sm:text-6xl md:text-7xl leading-none uppercase">
                                 {project.numero}
                             </h2>
@@ -48,13 +48,29 @@ export default function PageId({ params }: PageProps){
                                 {project.annee}
                             </div>
                         </div>
+                        <Image 
+                            src={project.imgGallery[0]} 
+                            alt={project.nom}
+                            className="absolute border left-1/5 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-lg z-0"
+                            width={100}
+                            height={200}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        /> 
+                        <Image 
+                            src={project.imgGallery[1]} 
+                            alt={project.nom}
+                            className="absolute border right-1/5 top-1/2 transform translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-lg z-0"
+                            width={100}
+                            height={200}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
                         
-                        <h3 className="font-beckam text-primary text-xl sm:text-2xl md:text-3xl leading-none uppercase mb-6">
-                            PROJET GRAPHIQUE
+                        <h3 className="font-beckam text-primary text-xl sm:text-2xl md:text-3xl leading-none uppercase mb-6 z-1">
+                            {project.nom}
                         </h3>
 
                         {/* Technologies/Outils pour le graphisme */}
-                        <div className="mb-8">
+                        <div className="mb-8 z-1">
                             <h4 className="text-primary font-semibold mb-3 uppercase tracking-wide">Outils utilisés :</h4>
                             <div className="flex flex-wrap justify-center gap-2">
                                 {project.technologies.map((tech, index) => (
