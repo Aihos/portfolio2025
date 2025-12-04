@@ -51,15 +51,23 @@ export default function PageId({ params }: PageProps){
                         <Image 
                             src={project.imgGallery[0]} 
                             alt={project.nom}
-                            className="absolute border left-1/5 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-lg z-0"
+                            className="absolute border left-1/5 top-1/3 transform -translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-xs z-0"
                             width={100}
                             height={200}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         /> 
+                         {/*  <Image 
+                            src={project.imgGallery[2]} 
+                            alt={project.nom}
+                            className="absolute border right-1/2 top-1/3 transform translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-xs z-0"
+                            width={100}
+                            height={200}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        /> */}
                         <Image 
                             src={project.imgGallery[1]} 
                             alt={project.nom}
-                            className="absolute border right-1/5 top-1/2 transform translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-lg z-0"
+                            className="absolute border right-1/5 top-1/3 transform translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-xs z-0"
                             width={100}
                             height={200}
                             sizes="(max-width: 768px) 100vw, 50vw"
