@@ -27,23 +27,25 @@ export default function GalerieEnsemble(){
             gsap.fromTo(card,
                 {
                     opacity: 0,
-                    y: 60,
-                    scale: 0.9
+                    y: 80,
+                    scale: 0.95,
+                    rotationX: 5
                 },
                 {
                     opacity: 1,
                     y: 0,
                     scale: 1,
-                    duration: 0.8,
-                    ease: "power2.out",
+                    rotationX: 0,
+                    duration: 1.2,
+                    ease: "power3.out",
                     scrollTrigger: {
                         trigger: card,
-                        start: "top 85%",
-                        end: "bottom 20%",
+                        start: "top 90%",
+                        end: "bottom 10%",
                         toggleActions: "play none none reverse",
                         markers: false
                     },
-                    delay: (index % 6) * 0.1 // Décalage pour effet cascade par rangée
+                    delay: (index % 6) * 0.08 // Décalage pour effet cascade par rangée
                 }
             );
         });
@@ -59,7 +61,7 @@ export default function GalerieEnsemble(){
             <div 
                 ref={gridRef}
                 className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 auto-rows-[280px] gap-4"
-                style={{ gap: '1rem' }}
+                style={{ gap: ' 1rem' }}
             >
                 {projects.map((project, index) => {
                     // Définir des tailles variées pour l'effet bento
@@ -79,19 +81,19 @@ export default function GalerieEnsemble(){
                             key={project.id}
                             ref={(el) => { cardsRef.current[index] = el; }}
                             href={`/galerie/${project.id}`}
-                            className={`group block rounded-2xl overflow-hidden bg-white border-2 border-primary/20 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 ${sizeClass}`}
+                            className={`group block rounded-2xl overflow-hidden bg-white border-gray-400 border-2 hover:border-primary transition-all duration-700 ease-out hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-3 ${sizeClass}`}
                         >
                             <div className="relative w-full h-full overflow-hidden">
                                 <Image
                                     src={project.imgUp}
                                     alt={project.nom}
                                     fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-115"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 />
                                 
                                 {/* Overlay avec gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-95 transition-opacity duration-700 ease-out" />
                                 
                                 {/* Badge type */}
                                 <div className={`absolute top-4 right-4 px-3 py-1 text-xs font-semibold uppercase tracking-wide rounded-full ${
@@ -103,7 +105,7 @@ export default function GalerieEnsemble(){
                                 </div>
                                 
                                 {/* Contenu au survol */}
-                                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-all duration-700 ease-out">
                                     <h3 className="font-beckam text-white text-xl md:text-2xl uppercase mb-2">
                                         {project.nom}
                                     </h3>
@@ -116,7 +118,7 @@ export default function GalerieEnsemble(){
                                         <span className="text-white/70 text-sm">
                                             {project.annee}
                                         </span>
-                                        <span className="text-white text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                                        <span className="text-white text-sm font-semibold group-hover:translate-x-2 transition-transform duration-500 ease-out">
                                             Voir →
                                         </span>
                                     </div>
