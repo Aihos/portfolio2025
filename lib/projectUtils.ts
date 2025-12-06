@@ -121,7 +121,7 @@ export const Projects : ProjectList[] = [
     },
      {
         id: "8",
-        nom: "Cite vitrine de cocktail",
+        nom: "Site vitrine de cocktail",
         description: "Site vitrine parlant du jeu Draconis",
         type: "dev",
         imgLeft: "/img/Artémis.png",
@@ -129,7 +129,7 @@ export const Projects : ProjectList[] = [
         imgUp: "/img/Hermès.png",
         imgGallery: ["/img/Artémis.png", "/img/blue.jpg", "/img/Hermès.png"],
         descriptionLongue: "APPERCU DU SITE VITRINE DÉDIÉ AU JEU DRACONIS, PRÉSENTANT L'UNIVERS, LES PERSONNAGES ET LES FONCTIONNALITÉS DU JEU. INCLUT DES CAPTURES D'ÉCRAN ET VIDEOS.",
-        numero: "04",
+        numero: "08",
         siteUrl: "https://draconis.netlify.app/",
         technologies: ["HTML, CSS", "JavaScript", "Responsive Design"],
         annee: "2025"

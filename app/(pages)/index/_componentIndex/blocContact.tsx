@@ -32,12 +32,12 @@ export default function BlocContact(){
     // Initialiser EmailJS dans useEffect
     useEffect(() => {
         try {
-            console.log('🔧 Initialisation d\'EmailJS...');
+            console.log('Initialisation d\'EmailJS...');
             emailjs.init('nTY1OGk9d0b8Q-wSc');
             setEmailJsReady(true);
-            console.log('✅ EmailJS initialisé avec succès');
+            console.log('EmailJS initialisé avec succès');
         } catch (error) {
-            console.error('❌ Erreur d\'initialisation EmailJS:', error);
+            console.error('Erreur d\'initialisation EmailJS:', error);
         }
     }, []);
     
@@ -55,13 +55,13 @@ export default function BlocContact(){
         e.preventDefault();
         
         if (!emailJsReady) {
-            console.error('❌ EmailJS n\'est pas encore initialisé');
+            console.error(' EmailJS n\'est pas encore initialisé');
             setSubmitStatus('error');
             return;
         }
         
         if (!formRef.current) {
-            console.error('❌ Référence au formulaire manquante');
+            console.error(' Référence au formulaire manquante');
             return;
         }
         
@@ -90,7 +90,7 @@ export default function BlocContact(){
                 templateParams
             );
             
-            console.log('✅ Email envoyé avec succès!', result);
+            console.log(' Email envoyé avec succès!', result);
             setSubmitStatus('success');
             setFormData({ nom: '', prenom: '', email: '', message: '' });
             
@@ -99,7 +99,7 @@ export default function BlocContact(){
                 formRef.current.reset();
             }
         } catch (error: unknown) {
-            console.error('❌ ERREUR COMPLÈTE:', error);
+            console.error(' ERREUR COMPLÈTE:', error);
             console.error('Type d\'erreur:', typeof error);
             console.error('Error stringifié:', JSON.stringify(error, null, 2));
             

@@ -27,7 +27,7 @@ export default function PageId({ params }: PageProps){
     }
 
     return(
-        <div className="min-h-screen w-full bg-white relative overflow-hidden pt-20">
+        <div className="min-h-screen w-full bg-white relative overflow-hidden pt-20 ">
             <Header />
              {/* Section centrale avec poster */}
              <div className="flex flex-col justify-center items-center gap-8 px-4 sm:px-8 md:px-12 lg:px-[68px] py-16 ">
@@ -41,17 +41,10 @@ export default function PageId({ params }: PageProps){
                 <div className="flex flex-col justify-center items-center px-4 sm:px-8 md:px-12 lg:px-[68px] py-16">
                     <div className="text-center mb-8">
                         <div className="relative flex items-center justify-center gap-4 mb-6 z-1">
-                            <h2 className="font-beckam text-primary text-4xl sm:text-6xl md:text-7xl leading-none uppercase">
-                                {project.numero}
-                            </h2>
-                            <div className="text-primary/60 text-lg">
-                                {project.annee}
-                            </div>
-                        </div>
-                        <Image 
+                             <Image 
                             src={project.imgGallery[0]} 
                             alt={project.nom}
-                            className="absolute border left-1/5 top-1/3 transform -translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-xs z-0"
+                            className="absolute border left-1/5 md:-left-4/5 top-1/3 transform -translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-xs z-0"
                             width={100}
                             height={200}
                             sizes="(max-width: 768px) 100vw, 50vw"
@@ -67,24 +60,33 @@ export default function PageId({ params }: PageProps){
                         <Image 
                             src={project.imgGallery[1]} 
                             alt={project.nom}
-                            className="absolute border right-1/5 top-1/3 transform translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-xs z-0"
+                            className="absolute border right-1/5 md:-right-4/5 top-1/3 transform translate-x-1/2 -translate-y-1/2 opacity-30 w-full max-w-xs z-0"
                             width={100}
                             height={200}
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                        
-                        <h3 className="font-beckam text-primary text-xl sm:text-2xl md:text-3xl leading-none uppercase mb-6 z-1">
+                            <h2 className="relative font-beckam text-primary text-4xl sm:text-6xl md:text-7xl leading-none uppercase z-10">
+                                {project.numero}
+                            </h2>
+                            <div className="relative text-primary/60 text-lg z-10">
+                                {project.annee}
+                            </div>
+                        </div>
+                         <h3 className="relative font-beckam text-primary text-xl sm:text-2xl md:text-3xl leading-none uppercase mb-6 z-5">
                             {project.nom}
                         </h3>
+                       
+                        
+                       
 
-                        {/* Technologies/Outils pour le graphisme */}
-                        <div className="mb-8 z-1">
-                            <h4 className="text-primary font-semibold mb-3 uppercase tracking-wide">Outils utilisés :</h4>
-                            <div className="flex flex-wrap justify-center gap-2">
+                        
+                        <div className="mb-8 z-2">
+                            <h4 className="relative text-primary font-semibold mb-3 uppercase tracking-wide z-10">Outils utilisés :</h4>
+                            <div className="flex flex-wrap justify-center gap-2 z-10">
                                 {project.technologies.map((tech, index) => (
                                     <span 
                                         key={index}
-                                        className="bg-primary/10 text-primary px-3 py-1 text-sm border border-primary/20"
+                                        className="bg-primary/10 text-primary px-3 py-1 text-sm border border-primary/20 z-10"
                                     >
                                         {tech}
                                     </span>
@@ -95,7 +97,7 @@ export default function PageId({ params }: PageProps){
                         {/* Bouton retour */}
                         <Link 
                             href="/galerie"
-                            className="inline-block border-2 border-primary text-primary font-bold py-3 px-8 uppercase tracking-wider hover:bg-primary hover:text-white transition-all"
+                            className="relative border-2 border-primary text-primary font-bold py-3 px-8 uppercase tracking-wider hover:bg-primary hover:text-white transition-all z-10"
                         >
                             RETOUR GALERIE
                         </Link>

@@ -47,7 +47,8 @@ export default function LineProject(){
     }, []);
 
     return(
-        <div ref={containerRef} className="flex flex-col w-full gap-4">
+       /*  <div ref={containerRef} className="flex flex-col w-full gap-4"> */
+        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
             {projectEnsemble.map((project) => (
                 <LineObject 
                     key={project.id}
