@@ -24,8 +24,8 @@ export default function GaleriePrint({listeImg}: {listeImg : string[]}){
     };
 
     return(
-       <div className="w-full max-w-6xl mx-auto p-4 z-1">
-            <div className="grid h-full grid-cols-5 gap-4">
+       <div className="w-full max-w-6xl mx-auto p-4">
+            <div className="grid h-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {listeImg.map((imgUrl, index) => (
                     <div 
                         key={index} 
@@ -45,7 +45,10 @@ export default function GaleriePrint({listeImg}: {listeImg : string[]}){
 
             {/* Modal Carrousel */}
             {isCarouselOpen && (
-                <div className="fixed max-h-screen h-full inset-0 bg-black/50 backdrop-blur-2xl bg-opacity-90 z-50 flex items-center justify-center">
+                <div 
+                    className="fixed max-h-screen h-full inset-0 bg-black/50 backdrop-blur-2xl bg-opacity-90 z-[9999] flex items-center justify-center"
+                    onClick={closeCarousel}
+                >
                     {/* Bouton fermer */}
                     <button
                         onClick={closeCarousel}
@@ -57,7 +60,10 @@ export default function GaleriePrint({listeImg}: {listeImg : string[]}){
 
                     {/* Bouton précédent */}
                     <button
-                        onClick={prevImage}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            prevImage();
+                        }}
                         className="absolute left-4 text-white text-4xl hover:text-primary transition z-10"
                         aria-label="Image précédente"
                     >
@@ -65,7 +71,10 @@ export default function GaleriePrint({listeImg}: {listeImg : string[]}){
                     </button>
 
                     {/* Image principale */}
-                    <div className="relative max-w-4xl max-h-[90vh] mx-8">
+                    <div 
+                        className="relative max-w-4xl max-h-[90vh] mx-8"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         <Image
                             src={listeImg[currentImageIndex]}
                             alt={`Image ${currentImageIndex + 1}`}
@@ -77,7 +86,10 @@ export default function GaleriePrint({listeImg}: {listeImg : string[]}){
 
                     {/* Bouton suivant */}
                     <button
-                        onClick={nextImage}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            nextImage();
+                        }}
                         className="absolute right-4 text-white text-4xl hover:text-primary transition z-10"
                         aria-label="Image suivante"
                     >
@@ -85,7 +97,10 @@ export default function GaleriePrint({listeImg}: {listeImg : string[]}){
                     </button>
 
                     {/* Indicateurs */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <div 
+                        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         {listeImg.map((_, index) => (
                             <button
                                 key={index}

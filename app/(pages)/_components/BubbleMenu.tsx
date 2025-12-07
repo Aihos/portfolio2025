@@ -3,6 +3,7 @@ import type { CSSProperties, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
+
 type MenuItem = {
   label: string;
   href: string;
@@ -35,6 +36,7 @@ const DEFAULT_ITEMS: MenuItem[] = [
     href: '/',
     ariaLabel: 'Index',
     rotation: -8,
+    /* hoverStyles: { bgColor: '#2A2EC5', textColor: '#ffffff' } */
     hoverStyles: { bgColor: '#2A2EC5', textColor: '#ffffff' }
   }, 
   {
@@ -59,8 +61,8 @@ export default function BubbleMenu({
   className,
   style,
   menuAriaLabel = 'Toggle menu',
-  menuBg = '#fff',
-  menuContentColor = '#111',
+  menuBg = '#2A2EC5',
+  menuContentColor = '#ffffff',
   useFixedPosition = true,
   items,
   animationEase = 'back.out(1.5)',
@@ -101,7 +103,7 @@ export default function BubbleMenu({
   const containerClassName = [
     'bubble-menu',
     useFixedPosition ? 'fixed' : 'absolute',
-    'left-0 right-0 top-4 sm:top-4 md:top-4',
+    'left-0 right-0 top-4 sm:top-6 md:top-8',
     'flex items-center justify-start',
     'gap-2 sm:gap-4',
     'px-4 sm:px-6 md:px-8',
@@ -328,7 +330,7 @@ export default function BubbleMenu({
                   className={[
                     'pill-link',
                     'w-full',
-                    'rounded-[999px]',
+                    'rounded-[10px]',
                     'no-underline',
                     'text-inherit',
                     'shadow-[0_4px_14px_rgba(0,0,0,0.10)]',
@@ -361,7 +363,7 @@ export default function BubbleMenu({
                   }}
                 >
                   <span
-                    className="pill-label inline-block"
+                    className="pill-label inline-block font-beckam bubblespan"
                     style={{
                       willChange: 'transform, opacity',
                       height: '1.2em',
