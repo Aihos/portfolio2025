@@ -7,9 +7,9 @@ import Link from "next/link"
 import Header from "../../_components/header"
 
 interface PageProps {
-    params: {
-        id: string
-    }
+    params: Promise<{
+    id: string
+  }>
 }
 
 export async function generateStaticParams() {
@@ -19,8 +19,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function PageId({ params }: PageProps){
-    const project = getProjectById(params.id);
+export default async function PageId({ params }: PageProps){
+      const { id } = await params
+    const project = getProjectById(id);
     
     if (!project) {
         notFound();

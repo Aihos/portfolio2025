@@ -81,7 +81,7 @@ export default function GalerieEnsemble(){
                             key={project.id}
                             ref={(el) => { cardsRef.current[index] = el; }}
                             href={`/galerie/${project.id}`}
-                            className={`group block rounded-2xl overflow-hidden bg-white border-gray-400 border-2 hover:border-primary transition-all duration-700 ease-out hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-3 ${sizeClass}`}
+                            className={`group block overflow-hidden bg-white  hover:border-primary transition-all duration-700 ease-out hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-3 ${sizeClass}`}
                         >
                             <div className="relative w-full h-full overflow-hidden">
                                 <Image
