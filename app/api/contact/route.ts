@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend(): Resend {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error("Missing Resend API key");
+  }
+  return new Resend(apiKey);
+}
 
 export async function POST(request: Request) {
   try {
@@ -14,7 +20,9 @@ export async function POST(request: Request) {
       );
     }
 
-    const from ="hugoleray@ohia-agence.fr";
+    const resend = getResend();
+
+    const from = "hugoleray@ohia-agence.fr";
     const to = process.env.RESEND_TO_EMAIL;
 
     if (!from || !to) {
