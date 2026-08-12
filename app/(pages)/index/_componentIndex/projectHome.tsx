@@ -2,9 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Button from "../../_components/Button";
 import Bluestarsvg from "../../_components/svg/bluestar";
-import CarrouselProject from "../../home/_components/carrouselProject";
 import LineProject from "./lineProject";
 import Link from "next/link";
 
@@ -121,7 +119,6 @@ export default function ProjectHome(){
             </div>
             <div ref={carrouselRef}>
                 <LineProject />
-              {/*   <CarrouselProject /> */}
             </div>
         </div>
     )

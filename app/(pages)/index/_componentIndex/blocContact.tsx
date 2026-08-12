@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import emailjs from '@emailjs/browser';
 import Bluestarsvg from "../../_components/svg/bluestar";
 
 // Registrer le plugin ScrollTrigger
@@ -16,7 +15,6 @@ export default function BlocContact(){
     const titleRef = useRef<HTMLHeadingElement>(null);
     const starRef = useRef<HTMLDivElement>(null);
     const formRef = useRef<HTMLFormElement>(null);
-    const [emailJsReady, setEmailJsReady] = useState(false);
     
     // États du formulaire
     const [formData, setFormData] = useState({
@@ -29,18 +27,6 @@ export default function BlocContact(){
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     
-    // Initialiser EmailJS dans useEffect
-    useEffect(() => {
-        try {
-            console.log('Initialisation d\'EmailJS...');
-            emailjs.init('nTY1OGk9d0b8Q-wSc');
-            setEmailJsReady(true);
-            console.log('EmailJS initialisé avec succès');
-        } catch (error) {
-            console.error('Erreur d\'initialisation EmailJS:', error);
-        }
-    }, []);
-    
     // Gestion des changements dans le formulaire
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -50,47 +36,30 @@ export default function BlocContact(){
         }));
     };
     
-    // Gestion de la soumission du formulaire avec EmailJS
+    // Gestion de la soumission du formulaire avec Resend (via API route)
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        
-        if (!emailJsReady) {
-            console.error(' EmailJS n\'est pas encore initialisé');
-            setSubmitStatus('error');
-            return;
-        }
-        
-        if (!formRef.current) {
-            console.error(' Référence au formulaire manquante');
-            return;
-        }
-        
+
         setIsSubmitting(true);
-        console.log('=== DÉBUT ENVOI EMAIL ===');
-        console.log('📧 EmailJS Ready:', emailJsReady);
-        console.log('📝 Données du formulaire:', formData);
-        
+
         try {
-            // Envoyer l'email via EmailJS avec send au lieu de sendForm
-            const templateParams = {
-                prenom: formData.prenom,
-                nom: formData.nom,
-                email: formData.email,
-                message: formData.message
-            };
-            
-            console.log('📦 Template params:', templateParams);
-            console.log('🔑 Service ID: service_wiyzabp');
-            console.log('📄 Template ID: template_7nwl91k');
-            console.log('🚀 Envoi en cours...');
-            
-            const result = await emailjs.send(
-                'service_wiyzabp',
-                'template_7nwl91k',
-                templateParams
-            );
-            
-            console.log(' Email envoyé avec succès!', result);
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    prenom: formData.prenom,
+                    nom: formData.nom,
+                    email: formData.email,
+                    message: formData.message
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Erreur lors de l\'envoi du message');
+            }
+
             setSubmitStatus('success');
             setFormData({ nom: '', prenom: '', email: '', message: '' });
             
@@ -99,21 +68,11 @@ export default function BlocContact(){
                 formRef.current.reset();
             }
         } catch (error: unknown) {
-            console.error(' ERREUR COMPLÈTE:', error);
-            console.error('Type d\'erreur:', typeof error);
-            console.error('Error stringifié:', JSON.stringify(error, null, 2));
-            
-            const emailError = error as { text?: string; message?: string; status?: number };
-            console.error('Détails extraits:', {
-                message: emailError?.text || emailError?.message || 'Erreur inconnue',
-                status: emailError?.status,
-            });
-            
+            console.error('Erreur envoi contact:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
             setTimeout(() => setSubmitStatus('idle'), 5000);
-            console.log('=== FIN ENVOI EMAIL ===');
         }
     };
 

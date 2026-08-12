@@ -1,5 +1,4 @@
 import Image from "next/image"
-import AffichagePoster from "./_component/affichagePoster"
 import GaleriePrint from "./_component/galeriePrint"
 import { getProjectById, getAllProjects } from "../../../../lib/projectUtils"
 import { notFound } from "next/navigation"

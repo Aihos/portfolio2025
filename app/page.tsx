@@ -1,4 +1,3 @@
-import Image from "next/image";
 import DeuxHomePage from "./(pages)/index/page";
 
 export default function Home() {

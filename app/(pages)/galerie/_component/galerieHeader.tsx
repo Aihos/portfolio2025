@@ -1,7 +1,4 @@
-import Button from "../../_components/Button";
 import Header from "../../_components/header";
-import ArrowStylisee from "../../_components/svg/ArrowStylisee";
-import Bluestarsvg from "../../_components/svg/bluestar";
 
 
 export default function GalerieHeader(){

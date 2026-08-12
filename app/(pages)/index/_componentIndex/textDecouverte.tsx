@@ -13,7 +13,6 @@ if (typeof window !== "undefined") {
 export default function TexteDecouverte(){
     const textRef = useRef<HTMLParagraphElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
-    const shapesRef = useRef<HTMLDivElement>(null);
     const floatingImagesRef = useRef<HTMLDivElement[]>([]);
 
     useEffect(() => {
