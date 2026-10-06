@@ -79,8 +79,8 @@ export default function GalerieEnsemble(){
                     // Taille réelle de rendu (grille 6 colonnes en lg) : évite
                     // l'upscale qui donnait un rendu compressé.
                     const sizeAttr = sizeClass.startsWith('col-span-2')
-                        ? '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 32vw'
-                        : '(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw';
+                        ? '(max-width: 1768px) 150vw, (max-width: 1524px) 150vw, 132vw'
+                        : '(max-width: 1768px) 150vw, (max-width: 1524px) 125vw, 116vw';
 
                     return (
                         <Link 
