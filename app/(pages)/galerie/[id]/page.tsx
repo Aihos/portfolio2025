@@ -78,6 +78,7 @@ export default async function PageId({ params }: PageProps) {
                 className="absolute border left-2/4 md:left-4/5 top-1/3 transform -translate-y-1/2 opacity-20 w-full max-sm:max-w-xs pointer-events-none"
                 width={300}
                 height={400}
+                quality={90}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
 
@@ -87,6 +88,7 @@ export default async function PageId({ params }: PageProps) {
                 className="absolute border right-2/4 md:right-4/5 top-1/3  transform  -translate-y-1/2 opacity-20 w-full max-sm:max-w-xs pointer-events-none"
                 width={300}
                 height={400}
+                quality={90}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
 
@@ -193,6 +195,7 @@ export default async function PageId({ params }: PageProps) {
                   src={project.imgGallery[0]}
                   alt={`${project.nom} — projet de Hugo Leray`}
                   fill
+                  quality={95}
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />

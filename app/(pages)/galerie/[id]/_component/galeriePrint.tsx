@@ -35,8 +35,10 @@ export default function GaleriePrint({listeImg}: {listeImg : string[]}){
                         <Image
                             src={imgUrl}
                             alt={`Image ${index + 1}`}
-                            width={200}
-                            height={400}
+                            width={600}
+                            height={600}
+                            quality={90}
+                            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 211px"
                             className="w-full h-full object-cover hover:opacity-90 transition-opacity"
                         />
                     </div>
@@ -72,15 +74,16 @@ export default function GaleriePrint({listeImg}: {listeImg : string[]}){
 
                     {/* Image principale */}
                     <div 
-                        className="relative max-w-4xl max-h-[90vh] mx-8"
+                        className="relative w-[92vw] h-[85vh] max-w-7xl"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <Image
                             src={listeImg[currentImageIndex]}
                             alt={`Image ${currentImageIndex + 1}`}
-                            width={400}
-                            height={800}
-                            className="max-w-full max-h-full object-contain"
+                            fill
+                            quality={95}
+                            sizes="(max-width: 1391px) 92vw, 1280px"
+                            className="object-contain"
                         />
                     </div>
 

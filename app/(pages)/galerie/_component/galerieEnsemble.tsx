@@ -76,6 +76,12 @@ export default function GalerieEnsemble(){
                     
                     const sizeClass = bentoClasses[index % bentoClasses.length];
 
+                    // Taille réelle de rendu (grille 6 colonnes en lg) : évite
+                    // l'upscale qui donnait un rendu compressé.
+                    const sizeAttr = sizeClass.startsWith('col-span-2')
+                        ? '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 32vw'
+                        : '(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw';
+
                     return (
                         <Link 
                             key={project.id}
@@ -88,8 +94,9 @@ export default function GalerieEnsemble(){
                                     src={project.imgUp}
                                     alt={project.nom}
                                     fill
+                                    quality={90}
                                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-115"
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    sizes={sizeAttr}
                                 />
                                 
                                 {/* Overlay avec gradient */}
